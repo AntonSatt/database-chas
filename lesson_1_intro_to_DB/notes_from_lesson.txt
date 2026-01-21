@@ -1,0 +1,183 @@
+Lesson 1 - Intro to DB
+--------------------------
+Databases are organized collections of data. 
+They allow efficient storage, retrieval and management of data. 
+
+Why not save data to a file?
+We've seen how to read from and write to a file using python or bash. Why not keep it simple?
+
+Sometimes it's not enough to read all data at once. Sometimes it's not feasible either. 
+
+Practial example: 
+If we store all data in txt. files in we would have to search all data each time if we just need a name and their data.
+Databases are better and more efficient.
+
+Databases to the resuce
+A data base system allows us to save and retrive information in a better way. 
+
+Different kinds of databases:
+
+- relational databases (SQL)
+- non-relational databases (NoSQL)
+- in-memory databases
+
+Structure in a SQL
+- Tables and colums
+
+SQL databases
+- Think of a speadsheet on steriods
+MySQL, MAriaDB and more
+
+NoSQL databases
+Less structure
+- MongoDB
+
+In-memory databases
+All data stored in RAM memory
+
+Examples: Redis, Memchached
+
+Focus for this course!
+Relational databases and the SQL language! (We are not gonna mention NoSQL and In-memory databases again on this course)
+
+-------------------------------------------------------------------------------------------------
+
+RDBMS 
+
+An RBDMS (Relational Database ManagementSystem) is software that mangages relational databases.
+During this course we wull use different RDBMS. 
+
+Database
+
+A databse is a collection of data organized in tables.
+If we think of a database as an excel file, each table is a spreadsheet. 
+
+Tables 
+A table is a collection of records structured in columns
+
+The structure of the table is fixed: all records in a table have a similar structure. 
+
+Example:
+Database: my company-name
+Tables: customers, products, inventory 
+Colummns for products: id, name, manifactuer, size
+Columns for customers: id, first name, last name
+
+Relations
+
+As the name relational databases implies, a key feature of our RDBMS is relations between coumns in different tables. 
+
+Indices
+
+We can create an index (plural indices) on one or more columns that we often sort or filter by. It will make sorting or filtering much faster (but will use more storage space).
+
+A special index is called the tables's Primary key, which uniquely identifies a row in the table. 
+
+SQL 
+
+(structured Query language) is a language that allows us to interface to relational databases.
+
+Different version of the SQL language. and eahc RDBMS usually implements a specific version or a subset of it. 
+
+SQL is made to be read and written like English. Nonetheless, it has a much stricter grammar, as we will see. 
+
+Is SQL always UPPERCASE?
+
+Traditionally SQL keywords are written in uppercase
+
+It's ok to write them in lowercase also. 
+
+SQL commands:
+Here is a list of commands we will explore: 
+- CREATE TABLE
+- INSERT INTO
+- UPDATE
+- DELETE
+- SELECT
+- DROP TABLE
+
+CREATE TABLE
+Creates a new table in the database. In this command we define all collumns for the table. 
+
+INSERT INTO 
+- Insert one or more tables
+
+UPDATE 
+- Modify
+
+DELETE 
+- Remove a record from a table 
+Can not be undone, think before you type. 
+
+SELECT
+To get data rom tables
+
+DROP TABLE
+Deletes an entire tables
+(can not be undone)
+
+RDBMS - MariaDB and SQLite
+
+MariaDB
+
+Very popular opensource RDBMS. It is a fork of MySQL. Both MariaDB and MySQL are currently developed and they mostly can replace each other.
+
+MariaDB has a server-client architecture, where on (or more)servers accept SQL commands from one or more clients concurrently.
+
+All databse data is saved server-side.
+--------------------------------------
+
+SQLite
+
+SQLite does not a have server-client architecture.
+
+It is a C library and CLI utility that save all data to a single binary file. It's ideal for local access to aDB from one client at a time. 
+
+SQLite is the most RDBMS in the world, your browser cache, your phone's apps, they all store it on SQLite locally. 
+-----------------------------------------------------------------------------------------
+
+SQL with SQLite
+Let's use the SQLite docs. 
+
+https://sqlite.org/lang.html
+
+Let's play arround with a test database called chinook.
+
+Good commands to know.
+- .tables
+- .schema Album
+
+https://raw.githubusercontent.com/lerocha/chinook-database/refs/heads/master/ChinookDatabase/DataSources/Chinook_Sqlite.sql
+
+-----------------------------
+
+SUBQUERIES
+
+Another way of connecting different tables is using subqueries. 
+
+For next lesson read about:
+SQLite's aggregate functions.
+
+---------------------------------------
+
+Answer the following questions using the chinook database:
+
+(https://raw.githubusercontent.com/lerocha/chinook-database/refs/heads/master/ChinookDatabase/DataSources/Chinook_Sqlite.sql)
+
+Each question should be answered with a signle query (but JOINs and subqueries are ok).
+
+1. Who's the customer who has spent the most?
+
+2. What's the title of the longest album? (most minutes of music)
+
+3. What's the title of the shortest album? (fewest minutes of music)
+
+4. What's the title of the album with the most songs?
+
+5- What's the title of the album with the fewest songs?
+
+6. What's the title of the album with the longest title (most characters in album name)?
+
+7. What's the title of the album with the shorest title (fewest characters in album name)? 
+
+
