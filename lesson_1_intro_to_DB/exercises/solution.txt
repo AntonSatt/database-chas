@@ -1,0 +1,78 @@
+Answer the following questions using the chinook database:
+
+(https://raw.githubusercontent.com/lerocha/chinook-database/refs/heads/master/ChinookDatabase/DataSources/Chinook_Sqlite.sql)
+
+Each question should be answered with a signle query (but JOINs and subqueries are ok).
+
+1. Who's the customer who has spent the most?
+
+.mode box
+
+SELECT Customer.FirstName, Customer.LastName, SUM(Invoice.Total)
+FROM Customer
+JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
+GROUP BY Customer.CustomerId
+ORDER BY SUM(Invoice.Total) DESC
+LIMIT 3;
+
+2. What's the title of the longest album? (most minutes of music)
+
+.mode box
+
+SELECT Album.Title, SUM(Track.Milliseconds)
+FROM Album
+JOIN Track ON Album.AlbumId = Track.AlbumId
+GROUP BY Album.AlbumId
+ORDER BY SUM(Track.Milliseconds) DESC
+LIMIT 3;
+
+3. What's the title of the shortest album? (fewest minutes of music)
+
+.mode box
+
+SELECT Album.Title, SUM(Track.Milliseconds)
+FROM Album
+JOIN Track ON Album.AlbumId = Track.AlbumId
+GROUP BY Album.AlbumId
+ORDER BY SUM(Track.Milliseconds) ASC
+LIMIT 3;
+
+
+4. What's the title of the album with the most songs?
+
+.mode box
+
+SELECT Album.Title, COUNT(Track.TrackId)
+FROM Album
+JOIN Track ON Album.AlbumId = Track.AlbumId
+GROUP by Album.AlbumId
+ORDER BY COUNT(Track.TrackId) DESC
+LIMIT 3;
+
+5- What's the title of the album with the fewest songs?
+
+.mode box
+
+SELECT Album.Title, COUNT(Track.TrackId)
+FROM Album
+JOIN Track ON Album.AlbumId = Track.AlbumId
+GROUP by Album.AlbumId
+ORDER BY COUNT(Track.TrackId) ASC
+LIMIT 3;
+
+6. What's the title of the album with the longest title (most characters in album name)?
+
+SELECT Album.Title, length(Album.Title)
+FROM Album
+GROUP by Album.AlbumId
+ORDER BY length(Album.Title) DESC
+LIMIT 3;
+
+7. What's the title of the album with the shorest title (fewest characters in album name)?
+
+SELECT Album.Title, length(Album.Title)
+FROM Album
+GROUP by Album.AlbumId
+ORDER BY length(Album.Title) ASC
+LIMIT 3;
+
