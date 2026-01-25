@@ -100,9 +100,34 @@ SQLite better if you have the data locally and only need to access it from a loc
 
 docker compuse pull && docker compose up -d && docker compose logs -f 
 
-wget link_here
+wget https://downloads.mysql.com/docs/sakila-db.tar.gz
 
 tar -xzvpf your_file.gz (unzip file)
+
+docker compose exec db mariadb --password=example
+
+Some changes in the docker compose yaml file. 
+
+docker compose exec db bash
+
+maridb --password=example
+
+mariadb --password=example <sakila-schema.sql
+
+mariadb --password=example
+
+show databases;
+
+use sakila
+
+describe store;
+
+show create table store;
+
+MariaDB [sakila]> SELECT film_id, title, COUNT(*) AS Total_Copies FROM inventory JOIN film USING (film_id) GROUP BY film_id ORDER BY Total_Copies DESC LIMIT 10;
+
+mariadb --password=example -t <1.sql 
+
 
 Missed some bits from the lesson (bathroom)
 
