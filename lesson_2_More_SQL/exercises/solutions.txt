@@ -6,11 +6,44 @@ Tip MariaDB also has aggregation functions and scalar functions.Make sure to rea
 
 1. Show a list of film genres. For each genre show a list of titles of the movies belonging to that genre. 
 
+SELECT category.name AS Genre, GROUP_CONCAT film.title SPEARATOR ', ') AS Films FROM film JOIN film_category USING (film_id) JOIN category USING (category_id) GROUP BY category_id\G
+
 2. What's the title of the most rented movie? How many times has it been rented?
+
+SELECT title, count(rental_id) as rentals FROM rental JOIN inventory USING (inventory_id) JOIN film USING (film_id) GROUP BY title ORDER BY rentals DESC LIMIT 1;
 
 3. What's the title of the 4th most rented movie? How many times has it been rented?
 
+SELECT          inventory_id,
+                count(*) AS rent,
+                film.title
+FROM            inventory
+JOIN            rental USING (inventory_id)
+JOIN            film USING (film_id)
+GROUP BY        film_id HAVING rent = (
+         SELECT    DISTINCT count(*) as renting
+         FROM      rental
+         JOIN      inventory USING (inventory_id)
+         JOIN      film USING (film_id)
+         GROUP BY  film_id
+         ORDER BY  renting DESC
+         LIMIT     1 OFFSET 3
+         )
+ORDER BY rent
+LIMIT 1
+;
+
 4. Have all rentals been paid?
+
+SELECT count(rental_id) AS total_rentals, count(payment_id) as total_payments FROM rental LEFT JOIN payment USING(rental_id);
 
 5. What percentage of the non current rentals have been returned too late?
 
+SELECT
+          count(*) *100 / (
+            SELECT count(*) FROM rental JOIN inventory USING (inventory_id)
+            JOIN film USING (film_id) WHERE NOT return_date IS NULL
+          ) AS percent
+FROM      rental JOIN inventory USING (inventory_id)
+          JOIN film USING (film_id)
+WHERE DATEDIFF(return_date, rental_date) > rental_duration;

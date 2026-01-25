@@ -1,0 +1,113 @@
+Lesson 3 - DB Design
+------------------------
+Database design
+
+When designing our own databases, we need to follow some best practices to ensure *data consistency*, *avoid redundancy* and *optimize performance*.
+
+---------------------------
+
+Anomalies and Normalization
+
+There are certain best practices followed when desgining databases, called *normal forms*, which allows us to *normalize* the database design.
+
+Normalization allows us to avoid so-called *anomalies* and make sure our design is behaving correctly, and can easily be modified later if needed.
+
+-----------------------
+
+Anomalies 
+
+Let's look at some anomalies first, and how they can create problems for our database's users. 
+
+In our example, we'll have a table of employees, their personal information, and the project they're currently assigned. We assue all columns have a NOT NULL clause.
+
+--------------
+
+Insertion anomalies
+
+Let's say we are onboarding a new member of staff, Billy Conway. Until we have a project to assign to Billy, we can't register other data about him, such as Employee ID, Name and Address.
+
+This is called an insertion anomaly.
+
+-------------
+
+Update anomaly
+
+Let's say one of our employees (Mark) have moved, and they have several projects assigned. 
+
+Mark might have two different addresses, but which one is the current one? The address information is needlessly duplicated across different records. 
+
+This is called an update anomaly. 
+
+------------------
+
+Deletion anomaly
+
+Let's assume all of Mark's current projects are completed. We end up removing all of records for mark from our table, thus deleting all info about Mark, such as name and address.
+
+This is called a deletion anomaly. 
+
+--------------------
+
+1NF
+
+1st normal form (1NF) states that each field in a table cannot contain multiples values. 
+
+To make the table desgin conform to 1NF, we can split our table into two separate table, one for authors and one for books, as an example. 
+
+---------------
+
+2NF 
+
+The requirements for 2NF are:
+
+- conform to 1NF
+
+- all non-key values must depend on the entire primary key
+
+----------------
+
+3NF 
+
+Here are the requirements for 3rd normal form: 
+
+- comply with 2NF
+
+- all non-key values must depend on nothing but the primary key
+
+---------------
+
+Usually, once we normalize up to 3NF we on't get any anomalies. 
+
+As you probably noticed, the usual solution for normalization is to divide data into several tables, possibly linked via foreign keys. 
+
+------------
+
+Beyond 3NF
+
+There are other NFs, such as 4NF, 5NF, 6NF, ...
+
+We'll stop at 3NF, but it can be good to know there is more to normalization, as usual we've barely scraped the surface.
+
+https://en.wikipedia.org/wiki/Database_normalization
+
+-------------------------
+
+For next time:
+
+Design a database and insert some example data. Make sure to keep the design normalized up to the 3NF. Your database should have at least 3 tables.
+
+Here are some suggestions of possible data to track using your newly desgined DB:
+
+- books you have a home, or books you intend to read
+
+- movies you've seen this year, or that you intend to see this year
+
+- your training sessions at the gym
+
+- whatever hobby or other activity that can be tracked
+
+If you can't come up with anything, go to https://www.gutenberg.org/ and create a database with some books and their info (year, author, etc..).
+
+Our teacher want a sql file for the next time with our created datebase. I am gonna use mariadb to test everything on my live server that I run in docker. 
+
+
