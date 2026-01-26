@@ -44,8 +44,7 @@ INSERT INTO SourceIPs (IpId, IpAddress) VALUES (1, '161.35.89.181');
 INSERT INTO SourceIPs (IpId, IpAddress) VALUES (2, '164.92.215.121');
 INSERT INTO SourceIPs (IpId, IpAddress) VALUES (3, '190.119.63.98');
 INSERT INTO SourceIPs (IpId, IpAddress) VALUES (4, '103.149.27.179');
-INSERT INTO SourceIPs (IpId, IpAddress) VALUES (5, '190.119.63.98');
-INSERT INTO SourceIPs (IpId, IpAddress) VALUES (6, '80.94.92.186');
+INSERT INTO SourceIPs (IpId, IpAddress) VALUES (5, '80.94.92.186');
 
 -- Login Attempt data
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
@@ -61,7 +60,7 @@ VALUES (3, 2, 'ssh:notty', '2025-12-31 23:59:00');
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
 VALUES (3, 2, 'ssh:notty', '2025-12-31 23:58:00');
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
-VALUES (5, 5, 'ssh:notty', '2025-12-31 23:58:00');
+VALUES (5, 3, 'ssh:notty', '2025-12-31 23:58:00');
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
 VALUES (1, 1, 'ssh:notty', '2025-12-31 23:58:00');
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
@@ -85,9 +84,9 @@ VALUES (1, 1, 'ssh:notty', '2025-12-31 23:52:00');
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
 VALUES (1, 1, 'ssh:notty', '2025-12-31 23:52:00');
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
-VALUES (7, 6, 'ssh:notty', '2025-12-31 23:49:00');
+VALUES (7, 5, 'ssh:notty', '2025-12-31 23:49:00');
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
-VALUES (7, 6, 'ssh:notty', '2025-12-31 23:44:00');
+VALUES (7, 5, 'ssh:notty', '2025-12-31 23:44:00');
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
 VALUES (1, 1, 'ssh:notty', '2025-12-31 23:41:00');
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
@@ -97,6 +96,6 @@ VALUES (1, 1, 'ssh:notty', '2025-12-31 23:39:00');
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
 VALUES (1, 1, 'ssh:notty', '2025-12-31 23:38:00');
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
-VALUES (8, 6, 'ssh:notty', '2025-12-31 23:38:00');
+VALUES (8, 5, 'ssh:notty', '2025-12-31 23:38:00');
 
 
