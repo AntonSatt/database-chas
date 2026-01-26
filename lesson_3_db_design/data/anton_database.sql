@@ -24,14 +24,79 @@ CREATE TABLE LoginAttempts (
 	IpId INTEGER NOT NULL,
 	TTY TEXT,
 	AttemptTime DATETIME,
-	FOREGIN KEY (UserId) REFERENCES Users(UserId) ON DELETE CASCADE,
-	FOREGIN KEY (IpId) REFERENCES SourceIPs(IpId)
+	FOREIGN KEY (UserId) REFERENCES Users(UserId) ON DELETE CASCADE,
+	FOREIGN KEY (IpId) REFERENCES SourceIPs(IpId)
 );
 
-INSERT INTO Users (Username) VALUES ('admin');
-INSERT INTO SourceIPs (IpAddress) VALUES ('134.209.85.52');
+-- User data 
+INSERT INTO Users (UserId, Username) VALUES (1, 'admin');
+INSERT INTO Users (UserId, Username) VALUES (2, 'sysadmin');
+INSERT INTO Users (UserId, Username) VALUES (3, 'debian');
+INSERT INTO Users (UserId, Username) VALUES (4, 'vpn');
+INSERT INTO Users (UserId, Username) VALUES (5, 'testuser');
+INSERT INTO Users (UserId, Username) VALUES (6, 'hero');
+INSERT INTO Users (UserId, Username) VALUES (7, 'sol');
+INSERT INTO Users (UserId, Username) VALUES (8, 'node');
 
+
+-- SourceIp data
+INSERT INTO SourceIPs (IpId, IpAddress) VALUES (1, '161.35.89.181');
+INSERT INTO SourceIPs (IpId, IpAddress) VALUES (2, '164.92.215.121');
+INSERT INTO SourceIPs (IpId, IpAddress) VALUES (3, '190.119.63.98');
+INSERT INTO SourceIPs (IpId, IpAddress) VALUES (4, '103.149.27.179');
+INSERT INTO SourceIPs (IpId, IpAddress) VALUES (5, '190.119.63.98');
+INSERT INTO SourceIPs (IpId, IpAddress) VALUES (6, '80.94.92.186');
+
+-- Login Attempt data
 INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
-SELECT UserId, IpId, 'ssh:notty', '2026-01-01 11:59:00'
-FROM Users, SourceIPs
-WHERE Username = 'admin' AND IpAddress = '134.209.85.52';
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:55:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 2, 'ssh:notty', '2025-12-31 23:32:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (2, 3, 'ssh:notty', '2026-01-01 00:00:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (4, 4, 'ssh:notty', '2025-12-31 23:59:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (3, 2, 'ssh:notty', '2025-12-31 23:59:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (3, 2, 'ssh:notty', '2025-12-31 23:58:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (5, 5, 'ssh:notty', '2025-12-31 23:58:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:58:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (3, 2, 'ssh:notty', '2025-12-31 23:57:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (6, 3, 'ssh:notty', '2025-12-31 23:57:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:56:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (3, 2, 'ssh:notty', '2025-12-31 23:56:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:55:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (3, 2, 'ssh:notty', '2025-12-31 23:55:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:54:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:53:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:52:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:52:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (7, 6, 'ssh:notty', '2025-12-31 23:49:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (7, 6, 'ssh:notty', '2025-12-31 23:44:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:41:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:40:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:39:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (1, 1, 'ssh:notty', '2025-12-31 23:38:00');
+INSERT INTO LoginAttempts (UserId, IpId, TTY, AttemptTime)
+VALUES (8, 6, 'ssh:notty', '2025-12-31 23:38:00');
+
+
