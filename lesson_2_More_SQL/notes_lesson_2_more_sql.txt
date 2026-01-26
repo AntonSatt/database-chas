@@ -129,8 +129,7 @@ MariaDB [sakila]> SELECT film_id, title, COUNT(*) AS Total_Copies FROM inventory
 mariadb --password=example -t <1.sql 
 
 
-Missed some bits from the lesson (bathroom)
 
 -----------------------------------------
 
-Kolla klart inspelningen, imorgon. 
+
