@@ -1,0 +1,51 @@
+Lesson 4 - Storage, Backup, Snapshots, Cloud DB
+----------------------------------------------
+
+MISSADE LITE I BÖRJAN! 
+
+DB Backup and restore
+------------------------
+
+As usual...
+
+You don't have a backup until you make sure you rstore your data.
+
+Scheduled, automated backups and restore tests will make you sleep much better at night knowing your backups work as intended. 
+
+The 3-2-1 rule applies here, too. 
+(3 backups, 2 media-formats, 1 off-site)
+
+-----------------------------------
+
+DB storage 
+
+Usally our databases store data on disk, but there are exceptions. Some databases, so-called in-memory databses only store data in the RAM. 
+
+When storing data on disk, we can take advantage of data replication on the storage level (i.e.: RAID) to make sure our database data is highly available and fault resistant. 
+
+------------------
+
+Snapshots
+
+Some filesystems allow us to take snapshots of the data. This can be useful to backup a whole database service regularly without the need to dump data to SQL file.
+
+Be sure to read the docs for your RDMS, as sometimes to use snapshots we need to lock our tables and flush the cache, which can in turn result in degraded I/O to our applications using the database. Plan accordingly! 
+
+-------------------------
+
+Cloud DBs
+
+One way to make sure our databases are highly available and fault resistant is to buy them as a service from a cloud provider. 
+
+In this way we buy ourselves out of the responsibility to operate our RDBMS, albeit by doing so we loose some control over the data (we don't fully "own" the data anymore).
+
+There are several different offerings out there, including some vendor-specific, compatible services, for MariaDB and PostgreSQL. Beware of the risk for lock-in.
+(Locked-in because, they might have custom build databases, not really vanilla MariaDB or PostgreSQL, a modified version of it.)
+
+If chosing this route, make sure to read on which SLAs are offered by the vendor, and make sure they are acceptable for you and your customers.
+(SLA = Service Level Agreement, good if your higher ups are offering a better SLA than you so you won't fail and need to pay)
+
+----------------------------
+
+
+
