@@ -1,0 +1,38 @@
+-- anton_database.sql schema
+CREATE DATABASE IF NOT EXISTS anton_security;
+USE anton_security;
+
+DROP TABLE IF EXISTS LoginAttempts;
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Countries;
+DROP TABLE IF EXISTS SourceIPs; 
+
+-- Table for login-names used
+CREATE TABLE Users (
+	UserId INTEGER PRIMARY KEY AUTO_INCREMENT,
+	Username TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL UNIQUE
+);
+
+-- Table for countries
+CREATE TABLE Countries(
+	CountryId INTEGER PRIMARY KEY AUTO_INCREMENT ,
+	Country TEXT NOT NULL UNIQUE
+);
+
+-- Table for Ip-adresses
+CREATE TABLE SourceIPs (
+	IpId INTEGER PRIMARY KEY AUTO_INCREMENT ,
+	IpAddress VARCHAR(45) NOT NULL UNIQUE
+);
+
+CREATE TABLE LoginAttempts (
+	AttemptId INTEGER PRIMARY KEY AUTO_INCREMENT,
+	UserId INTEGER NOT NULL,
+	CountryId INTEGER NOT NULL,
+	IpId INTEGER NOT NULL,
+	TTY TEXT,
+	AttemptTime DATETIME,
+	FOREIGN KEY (UserId) REFERENCES Users(UserId) ON DELETE CASCADE,
+	FOREIGN KEY (CountryId) REFERENCES Countries(CountryId) ON DELETE CASCADE,
+	FOREIGN KEY (IpId) REFERENCES SourceIPs(IpId)
+);

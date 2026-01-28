@@ -1,0 +1,2 @@
+-- Shows the amount of times a username was used to login.
+SELECT Users.Username, COUNT( LoginAttempts.UserId) AS Total_Username_Attempts FROM Users JOIN LoginAttempts ON Users.UserId = LoginAttempts.UserId GROUP BY Users.Username ORDER BY Total_Username_Attempts DESC LIMIT 100;
