@@ -1,3 +1,10 @@
 The Investigator - 1 - Hanukkah - notes
 
+Goal: 
+Find customer that is a skilled private investigator.
+
+ - Their phone number was their last name spelled out
+ - Number that spelled something using the letters printed on the phone buttons.
+ - example: 2 has "ABC, 3 has "DEF"
+
 
