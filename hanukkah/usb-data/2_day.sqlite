@@ -1,0 +1,20 @@
+/*
+CREATE TABLE products (sku text,desc text,wholesale_cost decimal(10,2),dims_cm array);
+CREATE TABLE customers (customerid integer,name text,address text,citystatezip text,birthdate text,phone text,timezone text,lat decimal(10,5),long decimal(10,5));
+CREATE TABLE orders (orderid text,customerid text,ordered timestamp,shipped timestamp,total decimal(10,2),items array);
+CREATE TABLE orders_items (orderid integer,sku text,qty integer,unit_price decimal(10,2));
+
+2017 = the year items was brought in.
+JP initials of contractor
+*/
+.mode box
+.headers on
+-- SELECT customers.phone FROM customers;
+
+-- SELECT orders.shipped FROM orders;
+
+SELECT 	customers.name, orders.shipped, customers.phone
+FROM 	customers
+JOIN 	orders ON orders.customerid = customers.customerid
+ORDER BY orders.shipped ASC
+LIMIT 	10;
