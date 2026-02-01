@@ -17,6 +17,7 @@ SELECT
 	customers.name,
 	customers.citystatezip,
 	customers.phone
+	
 FROM customers
 WHERE 
 	SUBSTR(customers.name, INSTR(customers.name, ' ') + 1, 6) = 'Wilson'
