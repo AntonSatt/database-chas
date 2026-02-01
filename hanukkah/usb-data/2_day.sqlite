@@ -17,7 +17,8 @@ SELECT 	DISTINCT
 	customers.name,
 	products.desc,
 	SUBSTR(orders.shipped, 1, 4) AS YEAR,
-	customers.phone
+	customers.phone,
+	customers.citystatezip
 FROM 	
 	customers
 	JOIN 	orders 		ON orders.customerid = customers.customerid

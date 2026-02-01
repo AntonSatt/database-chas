@@ -1,0 +1,22 @@
+.mode box
+.headers on
+/*
+Cousin = maybe same lastname? (Wilson) 
+Shops every sale at noah's
+clips every coupon at noah's. 
+Loses money for noah's?
+Maybe doesn't live in the same citystatezip as Nicole Wilson (Staten Island) because she need to use subway?
+
+CREATE TABLE products (sku text,desc text,wholesale_cost decimal(10,2),dims_cm array);
+CREATE TABLE customers (customerid integer,name text,address text,citystatezip text,birthdate text,phone text,timezone text,lat decimal(10,5),long decimal(10,5));
+CREATE TABLE orders (orderid text,customerid text,ordered timestamp,shipped timestamp,total decimal(10,2),items array);
+CREATE TABLE orders_items (orderid integer,sku text,qty integer,unit_price decimal(10,2));
+*/
+
+SELECT
+	customers.name,
+	customers.citystatezip,
+	customers.phone
+FROM customers
+WHERE 
+	SUBSTR(customers.name, INSTR(customers.name, ' ') + 1, 6) = 'Wilson'
