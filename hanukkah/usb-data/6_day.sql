@@ -15,9 +15,17 @@ CREATE TABLE orders_items (orderid integer,sku text,qty integer,unit_price decim
 
 SELECT
 	customers.name,
-	customers.citystatezip,
-	customers.phone
-	
-FROM customers
-WHERE 
-	SUBSTR(customers.name, INSTR(customers.name, ' ') + 1, 6) = 'Wilson'
+	customers.phone,
+	SUM((orders_items.unit_price - products.wholesale_cost) * orders_items.qty) AS store_total_profit
+FROM 	customers
+JOIN	orders 		ON CAST(orders.customerid AS INTEGER) = customers.customerid
+JOIN	orders_items 	ON orders_items.orderid = CAST(orders.orderid AS INTEGER)
+JOIN	products 	ON products.sku = orders_items.sku
+GROUP BY 
+	customers.name
+HAVING 	store_total_profit < 0
+ORDER BY 
+	store_total_profit ASC
+;
+
+-- notes, tried first to use WHERE but doesn't work with Aggregate Functions so learned to use HAVING instead that needs to be after GROUP By
