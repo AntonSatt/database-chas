@@ -23,7 +23,7 @@ JOIN	orders_items 	ON orders_items.orderid = CAST(orders.orderid AS INTEGER)
 JOIN	products 	ON products.sku = orders_items.sku
 GROUP BY 
 	customers.name
-HAVING 	store_total_profit < 0
+HAVING 	store_total_profit < -10
 ORDER BY 
 	store_total_profit ASC
 ;

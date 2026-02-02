@@ -1,0 +1,63 @@
+Lesson 5 - Database Migrations
+
+Database Migration
+
+(missed some here)
+As we've seen earlier, we can dump the 
+
+Example:
+Let's say we maintain an application that comes bundled with the schema file to initialize a new database.
+
+We shipped version 1 of our applications to some customers a few years ago. 
+
+After a year or so we release version 2, and while our existing customers are still on version 1, new customers from that point onward use version 2.
+
+Last month we lanched version 3, and new customers will be using it. Old customers, some running version 1 and some running version 2, now have contracted us asking to migrate the the new version 3. 
+
+Between version 1 and 2 we've made some changes to the DB schemas. 
+
+Some other changes have been made between version 2 and 3. 
+
+Now the problem arises: we need to move the data for our customers from version 1 or 2 of the database schema to version 3.
+
+All we have is a complete dump in SQL. 
+
+In our example, we now need to run diff on the schemas and figure out exactly the steps need to go from version1 to version 3. We need also to figure out a different set of changes to go from version 2 to version 3. 
+
+When we continously release new version, sometimes daily, the problem is exacerbated: we suddently have many different start versions that need to update to our latest one. 
+
+There is a way to avoid this kind of problmes altogheter, even when pushing a new release daily or more often.
+
+------------------------
+
+Migrations
+
+A database migration is the process of storing the schema of our databases as an incremental, versioned set of changes. 
+
+At the same time, in the database itself, we keep track of which migration version we're at. 
+
+It now becomes trivial to go from version X to Y. 
+
+Practical example:
+
+Let's say we start our database a new. We create a folder in our git repo called migrations, and we create the follow file called 00-create-users.sql
+
+<example code here>
+
+---------------
+
+Migration tools 
+
+There are ready-made tools that allow us to manage database migrations without the need to for a custom script. The principle of database migration is the same, regardless of which tool we use.
+
+There are migration tools specific to one or more RDBMS, and migration tools that are built-in the framework we use to develop our applications. 
+
+-----------------------
+
+FOR NEXT TIME:
+
+I've got a SQLite DB dump in SQL format. It contains data about the animated series /The Simpsons/ . There is information on the characters, the locations, the episodes, as well as all lines from the episodes' scripts.
+
+This data was imported from a scv fle using *csvkit*, and during the conversion a few things went wrong. Fix the following problmes, using one migration file for each problem. You can treat the inital SQL file as migration nr.0.
+
+LOOK SLACK FOR ALL THE THINGS YOU HAVE TO DO! 

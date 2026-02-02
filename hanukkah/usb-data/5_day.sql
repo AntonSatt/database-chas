@@ -25,4 +25,7 @@ JOIN 	products 	ON products.sku = orders_items.sku
 WHERE 
 	SUBSTR(customers.citystatezip, 1, 13) = 'Staten Island'
 	AND orders_items.qty > 2
+	AND products.desc LIKE '%Cat%'
+GROUP BY 
+	customers.name
 ;
