@@ -1,0 +1,14 @@
+Meeting Monday - Group Project - Grupp Sex
+
+Ska vi ha en gruppledare? 
+(Ansvar för att alla uppgifter görs och att vi får ett fungerade slutprojekt?)
+
+Ska alla kunna pusha till main? 
+(När vi skapar repo, ska vem som helst kunna pusha till main eller ska man ha 1-2 som kontrollerar att det går rätt till)
+
+Dela upp uppgift i mindre bitar där alla får en del? 
+
+Grupp Sex regler?
+(Alltid köra ny bransh?, ska vi köra med issues på problem man hittar till vår github? (lite överkurs))
+
+
