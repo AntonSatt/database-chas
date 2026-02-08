@@ -2,8 +2,9 @@ Lesson 5 - Database Migrations
 
 Database Migration
 
-(missed some here)
-As we've seen earlier, we can dump the 
+As we've seen earlier, we can dump the schema of our DB to a file in SQL format. That's very practical when we are starting: we might build the inital tables by hand in a shell, and then dump everything to a file to edit them further. 
+
+While keeping a dump of the schema is a good idea, keeping the /whole/ dump in one signle file is not. 
 
 Example:
 Let's say we maintain an application that comes bundled with the schema file to initialize a new database.
