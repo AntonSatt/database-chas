@@ -1,0 +1,39 @@
+Notes - Lesson 6 - Databases and Python
+-------------------------------------
+Python and DB
+
+Sqlite 
+https://docs.python.org/3/library/sqlite3.html
+
+example:
+
+#!/usr/bin/env python3 
+
+import sqlite3
+
+if __name__ == '__main__':
+
+example:
+
+#!/usr/bin/env python3 
+
+import sqlite3
+
+if __name__ == "__main__":
+	conn = sqlite3.connect("test.db")
+	cur = conn.cursor()
+
+	table_exists = cur.execute("SELECT * FROM sqlite_master WHERE name = 'users' 
+	cur .execute(""CREATE TABLE users (
+	user_id INTEGER PRIMARY KEY,
+	username VARCHAR(25) NOT NULL UNIQUE,
+	password VARCHAR(50) NOT NULL)"") 
+	cur.execute(""INSERT INTO users (username, password)
+	VALUES ('admin', 'testpass', ('alice, 'alicepwd'))"")
+	conn.commit()
+	res = cur.execute("SELECT * FROM users")
+	print(res.fetchall())
+
+Skriver in det här efter.
+
+

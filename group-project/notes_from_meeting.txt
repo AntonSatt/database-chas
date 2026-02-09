@@ -1,0 +1,24 @@
+Meeting info
+
+Ska vi ha en gruppledare?
+(Ansvar för att alla uppgifter görs och att vi får ett fungerade slutprojekt?)
+- No group-leader, check together.
+
+Next meeting, 18/2 10:00
+
+Our group always work on a different bransh.
+
+Put issues for problem. 
+
+Dela upp uppgift i mindre bitar där alla får en del?
+
+Hur ofta ska vi ha synk?
+
+Hur ofta ska vi ha möten där vi jobbar tillsammans?
+
+Vilka tider, vilka dagar fungerar för synk?
+
+Ask giacomo about sending a message in a the database to another user.
+
+We need a docker compose file for everyone so we can try stuff. 
+

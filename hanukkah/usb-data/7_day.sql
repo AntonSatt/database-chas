@@ -31,9 +31,10 @@ WHERE	desc REGEXP 'Jersey|Poster|Action Figure'
 AND	date REGEXP '2018-12-31 12|2020-06-28 11|2021-10-07 14|2022-04-23 14'
 AND	desc LIKE '%Poster%'
 AND	date LIKE '%2018-12-31 12:26%'
-AND	name LIKE '%Carlos%'
+--AND	name LIKE '%Carlos%'
 
 ORDER BY date
+LIMIT 1
 ;
 
 
