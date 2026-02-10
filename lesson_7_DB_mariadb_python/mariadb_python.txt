@@ -1,0 +1,79 @@
+Läs på om att använda python för att prata med MariaDB. Hitta docs/resurser själva, vi diskuterar på onsdag det ni kommit fram till
+----------------------------------------------------
+
+Connecting to MariaDB Server
+1. To connect to MariaDB Server using MariaDB Connector/Python, you have to import it first, just as you would any other module: import mariadb
+
+2. Next, establish a database connection with the connect() function. The function takes a series of named arguments specifying your client credentials, such as user name, host, password. If you are using a database instance on SkySQL, this information is provided in the Service Details page for your database instance.
+
+The connection provides you with an interface for configuring your application’s connection to the MariaDB Server.
+
+3. Lastly, call the cursor() method on the connection to retrieve the cursor.
+
+The cursor provides you with an interface for interacting with the Server, such as running SQL queries and managing transactions.
+
+Example:
+
+# Module Imports
+import mariadb
+import sys
+
+# Connect to MariaDB Platform
+try:
+    conn = mariadb.connect(
+        user="db_user",
+        password="db_user_passwd",
+        host="192.0.2.1",
+        port=3306,
+        database="employees"
+
+    )
+except mariadb.Error as e:
+    print(f"Error connecting to MariaDB Platform: {e}")
+    sys.exit(1)
+
+# Get Cursor
+cur = conn.cursor()
+
+------------------------------------
+
+Full example: 
+
+#!/usr/bin/python 
+import mariadb 
+
+conn = mariadb.connect(
+    user="db_user",
+    password="db_user_passwd",
+    host="localhost",
+    database="employees")
+cur = conn.cursor() 
+
+#retrieving information 
+some_name = "Georgi" 
+cur.execute("SELECT first_name,last_name FROM employees WHERE first_name=?", (some_name,)) 
+
+for first_name, last_name in cur: 
+    print(f"First name: {first_name}, Last name: {last_name}")
+    
+#insert information 
+try: 
+    cur.execute("INSERT INTO employees (first_name,last_name) VALUES (?, ?)", ("Maria","DB")) 
+except mariadb.Error as e: 
+    print(f"Error: {e}")
+
+conn.commit() 
+print(f"Last Inserted ID: {cur.lastrowid}")
+    
+conn.close()
+
+---------------------
+
+
+
+
+
+Links: 
+https://mariadb.com/resources/blog/how-to-connect-python-programs-to-mariadb/
+
+https://pypi.org/project/mariadb/
