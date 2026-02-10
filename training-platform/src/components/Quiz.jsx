@@ -10,6 +10,8 @@ function shuffle(array) {
   return a;
 }
 
+const MAX_QUESTIONS = 20;
+
 const CATEGORIES = [
   "All",
   ...Array.from(new Set(questions.map((q) => q.category))),
@@ -30,7 +32,7 @@ export default function Quiz() {
       category === "All"
         ? questions
         : questions.filter((q) => q.category === category);
-    return shuffle(filtered);
+    return shuffle(filtered).slice(0, MAX_QUESTIONS);
   }, [category, started]); // re-shuffle when quiz starts
 
   const total = pool.length;
@@ -98,15 +100,18 @@ export default function Quiz() {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
-          {CATEGORIES.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat} (
-              {cat === "All"
+          {CATEGORIES.map((cat) => {
+            const available =
+              cat === "All"
                 ? questions.length
-                : questions.filter((q) => q.category === cat).length}{" "}
-              questions)
-            </option>
-          ))}
+                : questions.filter((q) => q.category === cat).length;
+            const shown = Math.min(available, MAX_QUESTIONS);
+            return (
+              <option key={cat} value={cat}>
+                {cat} ({shown} of {available} questions)
+              </option>
+            );
+          })}
         </select>
         <button className="btn-primary" onClick={handleStart}>
           Start Quiz

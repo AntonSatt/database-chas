@@ -81,6 +81,118 @@ const questions = [
     options: ["DELETE", "REMOVE TABLE", "DROP TABLE", "TRUNCATE"],
     correct: 2,
   },
+  {
+    id: 30,
+    category: "Intro to Databases",
+    question: "What is an index in a database?",
+    options: [
+      "The first row of data in a table",
+      "A structure that speeds up sorting and filtering on specific columns at the cost of extra storage",
+      "A type of database backup",
+      "The table of contents in the database documentation"
+    ],
+    correct: 1,
+  },
+  {
+    id: 35,
+    category: "Intro to Databases",
+    question: "MariaDB is a fork of which database system?",
+    options: ["PostgreSQL", "SQLite", "MySQL", "Oracle DB"],
+    correct: 2,
+  },
+  {
+    id: 36,
+    category: "Intro to Databases",
+    question: "Which of the following is a NoSQL database?",
+    options: ["MariaDB", "SQLite", "MySQL", "MongoDB"],
+    correct: 3,
+  },
+  {
+    id: 41,
+    category: "Intro to Databases",
+    question: "What does CRUD stand for?",
+    options: [
+      "Create, Read, Update, Delete",
+      "Copy, Rename, Undo, Drop",
+      "Connect, Retrieve, Upload, Disconnect",
+      "Create, Replace, Use, Destroy"
+    ],
+    correct: 0,
+  },
+  {
+    id: 42,
+    category: "Intro to Databases",
+    question: "Which SQL command is used to add a new row of data to a table?",
+    options: ["ADD ROW", "INSERT INTO", "CREATE ROW", "APPEND"],
+    correct: 1,
+  },
+  {
+    id: 43,
+    category: "Intro to Databases",
+    question: "What does the UPDATE command do in SQL?",
+    options: [
+      "Creates a new table",
+      "Deletes data from a table",
+      "Modifies existing data in a table",
+      "Retrieves data from a table"
+    ],
+    correct: 2,
+  },
+  {
+    id: 44,
+    category: "Intro to Databases",
+    question: "Which clause is used in a SELECT statement to filter rows?",
+    options: ["FILTER", "WHERE", "HAVING", "LIMIT"],
+    correct: 1,
+  },
+  {
+    id: 45,
+    category: "Intro to Databases",
+    question: "What is a foreign key?",
+    options: [
+      "A key used to encrypt database data",
+      "A column that references a primary key in another table",
+      "A key used by external applications only",
+      "The second column in every table"
+    ],
+    correct: 1,
+  },
+  {
+    id: 46,
+    category: "Intro to Databases",
+    question: "What is a JOIN used for in SQL?",
+    options: [
+      "Merging two databases into one",
+      "Combining rows from two or more tables based on a related column",
+      "Adding a new column to a table",
+      "Creating a backup of the database"
+    ],
+    correct: 1,
+  },
+  {
+    id: 47,
+    category: "Intro to Databases",
+    question: "What is SQLite commonly used for?",
+    options: [
+      "Large enterprise applications with many concurrent users",
+      "Local storage in mobile apps, browsers, and embedded systems",
+      "Distributed cloud computing only",
+      "Real-time streaming data"
+    ],
+    correct: 1,
+  },
+  {
+    id: 48,
+    category: "Intro to Databases",
+    question: "What does the DELETE command do in SQL?",
+    options: [
+      "Removes the entire table structure",
+      "Removes rows from a table based on a condition",
+      "Deletes the entire database",
+      "Removes a column from a table"
+    ],
+    correct: 1,
+  },
   // --- Lesson 2: More SQL ---
   {
     id: 9,
@@ -161,6 +273,111 @@ const questions = [
     ],
     correct: 1,
   },
+  {
+    id: 31,
+    category: "More SQL",
+    question: "What does the NOT keyword do when combined with LIKE?",
+    options: [
+      "It inverts the pattern match, returning rows that do NOT match the pattern",
+      "It makes the search case-insensitive",
+      "It returns only NULL values",
+      "It reverses the sort order"
+    ],
+    correct: 0,
+  },
+  {
+    id: 37,
+    category: "More SQL",
+    question: "When using LIKE, which character matches exactly one character?",
+    options: ["%", "_", "*", "?"],
+    correct: 1,
+  },
+  {
+    id: 49,
+    category: "More SQL",
+    question: "What does the GROUP BY clause do?",
+    options: [
+      "Sorts the results alphabetically",
+      "Groups rows that share a value so aggregate functions can be applied to each group",
+      "Limits the output to a set number of rows",
+      "Joins two tables together"
+    ],
+    correct: 1,
+  },
+  {
+    id: 50,
+    category: "More SQL",
+    question: "Which aggregate function returns the number of rows?",
+    options: ["SUM()", "AVG()", "COUNT()", "MAX()"],
+    correct: 2,
+  },
+  {
+    id: 51,
+    category: "More SQL",
+    question: "What does ORDER BY do in a SQL query?",
+    options: [
+      "Groups rows by a column value",
+      "Filters rows based on a condition",
+      "Sorts the result set by one or more columns",
+      "Limits the number of returned rows"
+    ],
+    correct: 2,
+  },
+  {
+    id: 52,
+    category: "More SQL",
+    question: "What is a subquery?",
+    options: [
+      "A query that runs on a backup database",
+      "A query nested inside another SQL query",
+      "A query that only returns one row",
+      "A query that does not use SELECT"
+    ],
+    correct: 1,
+  },
+  {
+    id: 53,
+    category: "More SQL",
+    question: "What does the LENGTH() function do in SQL?",
+    options: [
+      "Returns the number of tables in the database",
+      "Returns the number of characters in a string",
+      "Returns the number of rows in a table",
+      "Returns the size of the database in bytes"
+    ],
+    correct: 1,
+  },
+  {
+    id: 54,
+    category: "More SQL",
+    question: "Which keyword is used to sort results in descending order?",
+    options: ["ASC", "DESC", "REVERSE", "DOWN"],
+    correct: 1,
+  },
+  {
+    id: 55,
+    category: "More SQL",
+    question: "What is the purpose of the LIMIT clause?",
+    options: [
+      "To restrict which columns are returned",
+      "To set a maximum value for a column",
+      "To restrict the number of rows returned by a query",
+      "To limit the size of the database"
+    ],
+    correct: 2,
+  },
+  {
+    id: 56,
+    category: "More SQL",
+    question: "When is a TRIGGER with BEFORE useful?",
+    options: [
+      "To run a query after the database shuts down",
+      "To validate or modify data before it is inserted or updated",
+      "To speed up SELECT queries",
+      "To automatically delete old backups"
+    ],
+    correct: 1,
+  },
   // --- Lesson 3: Database Design ---
   {
     id: 16,
@@ -222,6 +439,114 @@ const questions = [
     ],
     correct: 0,
   },
+  {
+    id: 32,
+    category: "Database Design",
+    question: "What is an update anomaly?",
+    options: [
+      "When the UPDATE command is too slow",
+      "When updating a value in one row doesn't update the same value duplicated in other rows, causing inconsistency",
+      "When a database version is out of date",
+      "When a trigger blocks an UPDATE"
+    ],
+    correct: 1,
+  },
+  {
+    id: 38,
+    category: "Database Design",
+    question: "What is the usual solution for normalizing a database design?",
+    options: [
+      "Adding more columns to existing tables",
+      "Removing all foreign keys",
+      "Dividing data into several tables linked via foreign keys",
+      "Storing all data in a single table"
+    ],
+    correct: 2,
+  },
+  {
+    id: 57,
+    category: "Database Design",
+    question: "What is normalization in the context of database design?",
+    options: [
+      "Making all column names lowercase",
+      "Organizing data to reduce redundancy and prevent anomalies",
+      "Converting a NoSQL database to SQL",
+      "Compressing the database to save space"
+    ],
+    correct: 1,
+  },
+  {
+    id: 58,
+    category: "Database Design",
+    question: "What is a composite primary key?",
+    options: [
+      "A primary key that uses encryption",
+      "A primary key made up of two or more columns together",
+      "A primary key that is also a foreign key",
+      "A primary key that auto-increments"
+    ],
+    correct: 1,
+  },
+  {
+    id: 59,
+    category: "Database Design",
+    question: "What is a one-to-many relationship?",
+    options: [
+      "Each row in table A links to exactly one row in table B",
+      "One row in table A can relate to many rows in table B, but each row in B relates to only one in A",
+      "Many rows in table A link to many rows in table B",
+      "There is no relationship between the tables"
+    ],
+    correct: 1,
+  },
+  {
+    id: 60,
+    category: "Database Design",
+    question: "What is the purpose of a foreign key constraint?",
+    options: [
+      "To speed up queries on large tables",
+      "To ensure a value in one table matches a valid primary key in another table",
+      "To prevent any data from being deleted",
+      "To automatically create backup copies"
+    ],
+    correct: 1,
+  },
+  {
+    id: 61,
+    category: "Database Design",
+    question: "What does CASCADE do when used with a foreign key ON DELETE?",
+    options: [
+      "It prevents the delete operation",
+      "It sets the foreign key value to NULL",
+      "It automatically deletes the related rows in the child table",
+      "It logs the deletion for auditing"
+    ],
+    correct: 2,
+  },
+  {
+    id: 62,
+    category: "Database Design",
+    question: "Why should you avoid storing multiple values in a single column?",
+    options: [
+      "It uses too much disk space",
+      "It violates First Normal Form and makes querying difficult",
+      "It causes the database to crash",
+      "SQL does not allow text in columns"
+    ],
+    correct: 1,
+  },
+  {
+    id: 63,
+    category: "Database Design",
+    question: "What is a many-to-many relationship typically implemented with?",
+    options: [
+      "A single foreign key in one table",
+      "A junction (bridge) table with foreign keys to both related tables",
+      "A VIEW that combines two tables",
+      "Storing comma-separated IDs in a column"
+    ],
+    correct: 1,
+  },
   // --- Lesson 4: Storage, Backup, Cloud DBs ---
   {
     id: 21,
@@ -259,6 +584,78 @@ const questions = [
     ],
     correct: 2,
   },
+  {
+    id: 33,
+    category: "Storage & Backup",
+    question: "What does RAID provide for database storage?",
+    options: [
+      "Faster SQL query execution",
+      "Automatic query optimization",
+      "High availability and fault resistance through data replication at the storage level",
+      "Encryption of all stored data"
+    ],
+    correct: 2,
+  },
+  {
+    id: 40,
+    category: "Storage & Backup",
+    question: "What does SLA stand for in the context of cloud databases?",
+    options: [
+      "Structured Language Agreement",
+      "Service Level Agreement",
+      "Server Load Average",
+      "Standard License Authorization"
+    ],
+    correct: 1,
+  },
+  {
+    id: 64,
+    category: "Storage & Backup",
+    question: "Why is it important to test database restores regularly?",
+    options: [
+      "To make the database faster",
+      "To verify that backups actually work and data can be recovered",
+      "To reduce the size of the database",
+      "To comply with SQL standards"
+    ],
+    correct: 1,
+  },
+  {
+    id: 65,
+    category: "Storage & Backup",
+    question: "What is a potential downside of taking a database snapshot?",
+    options: [
+      "Snapshots cannot be stored on disk",
+      "It may require table locking or cache flushing, which can impact performance",
+      "Snapshots delete the original data",
+      "They only work with NoSQL databases"
+    ],
+    correct: 1,
+  },
+  {
+    id: 66,
+    category: "Storage & Backup",
+    question: "What does 'vendor lock-in' mean for cloud databases?",
+    options: [
+      "The database becomes encrypted and inaccessible",
+      "You become dependent on a specific provider's tools and formats, making it hard to switch",
+      "The cloud provider locks your account after too many queries",
+      "Your data is automatically deleted after a trial period"
+    ],
+    correct: 1,
+  },
+  {
+    id: 67,
+    category: "Storage & Backup",
+    question: "What is a key advantage of cloud-hosted databases?",
+    options: [
+      "They are always free to use",
+      "They provide high availability and managed infrastructure",
+      "They never require backups",
+      "They are faster than local databases in all cases"
+    ],
+    correct: 1,
+  },
   // --- Lesson 5: Database Migrations ---
   {
     id: 24,
@@ -281,6 +678,66 @@ const questions = [
       "Migrations allow incremental, versioned updates from any version to any other",
       "Dump files cannot contain CREATE TABLE statements",
       "Migrations are faster to execute"
+    ],
+    correct: 1,
+  },
+  {
+    id: 34,
+    category: "Database Migrations",
+    question: "Where is the current migration version typically tracked?",
+    options: [
+      "In a text file on the developer's desktop",
+      "In the database itself",
+      "In the application's README file",
+      "In the operating system's registry"
+    ],
+    correct: 1,
+  },
+  {
+    id: 68,
+    category: "Database Migrations",
+    question: "What problem do migrations solve when multiple versions of an app are in use?",
+    options: [
+      "They make the app run faster",
+      "They allow upgrading the database schema step by step from any version to any other",
+      "They automatically fix bugs in SQL queries",
+      "They compress old data to save storage"
+    ],
+    correct: 1,
+  },
+  {
+    id: 69,
+    category: "Database Migrations",
+    question: "What is a typical naming convention for migration files?",
+    options: [
+      "Random UUIDs like a3f8-b2c1.sql",
+      "Numbered sequential names like 00-create-users.sql, 01-add-column.sql",
+      "The date the developer was hired",
+      "The name of the developer who wrote it"
+    ],
+    correct: 1,
+  },
+  {
+    id: 70,
+    category: "Database Migrations",
+    question: "What happens if you skip a migration step?",
+    options: [
+      "Nothing, migrations are optional",
+      "The database may end up in an inconsistent or broken state",
+      "The database automatically fixes itself",
+      "All data is deleted"
+    ],
+    correct: 1,
+  },
+  {
+    id: 71,
+    category: "Database Migrations",
+    question: "Which of the following is an example of a schema change that a migration might perform?",
+    options: [
+      "Changing the color theme of the application",
+      "Adding a new column to an existing table",
+      "Restarting the database server",
+      "Updating the operating system"
     ],
     correct: 1,
   },
@@ -324,99 +781,6 @@ const questions = [
     correct: 1,
   },
   {
-    id: 30,
-    category: "Intro to Databases",
-    question: "What is an index in a database?",
-    options: [
-      "The first row of data in a table",
-      "A structure that speeds up sorting and filtering on specific columns at the cost of extra storage",
-      "A type of database backup",
-      "The table of contents in the database documentation"
-    ],
-    correct: 1,
-  },
-  {
-    id: 31,
-    category: "More SQL",
-    question: "What does the NOT keyword do when combined with LIKE?",
-    options: [
-      "It inverts the pattern match, returning rows that do NOT match the pattern",
-      "It makes the search case-insensitive",
-      "It returns only NULL values",
-      "It reverses the sort order"
-    ],
-    correct: 0,
-  },
-  {
-    id: 32,
-    category: "Database Design",
-    question: "What is an update anomaly?",
-    options: [
-      "When the UPDATE command is too slow",
-      "When updating a value in one row doesn't update the same value duplicated in other rows, causing inconsistency",
-      "When a database version is out of date",
-      "When a trigger blocks an UPDATE"
-    ],
-    correct: 1,
-  },
-  {
-    id: 33,
-    category: "Storage & Backup",
-    question: "What does RAID provide for database storage?",
-    options: [
-      "Faster SQL query execution",
-      "Automatic query optimization",
-      "High availability and fault resistance through data replication at the storage level",
-      "Encryption of all stored data"
-    ],
-    correct: 2,
-  },
-  {
-    id: 34,
-    category: "Database Migrations",
-    question: "Where is the current migration version typically tracked?",
-    options: [
-      "In a text file on the developer's desktop",
-      "In the database itself",
-      "In the application's README file",
-      "In the operating system's registry"
-    ],
-    correct: 1,
-  },
-  {
-    id: 35,
-    category: "Intro to Databases",
-    question: "MariaDB is a fork of which database system?",
-    options: ["PostgreSQL", "SQLite", "MySQL", "Oracle DB"],
-    correct: 2,
-  },
-  {
-    id: 36,
-    category: "Intro to Databases",
-    question: "Which of the following is a NoSQL database?",
-    options: ["MariaDB", "SQLite", "MySQL", "MongoDB"],
-    correct: 3,
-  },
-  {
-    id: 37,
-    category: "More SQL",
-    question: "When using LIKE, which character matches exactly one character?",
-    options: ["%", "_", "*", "?"],
-    correct: 1,
-  },
-  {
-    id: 38,
-    category: "Database Design",
-    question: "What is the usual solution for normalizing a database design?",
-    options: [
-      "Adding more columns to existing tables",
-      "Removing all foreign keys",
-      "Dividing data into several tables linked via foreign keys",
-      "Storing all data in a single table"
-    ],
-    correct: 2,
-  },
-  {
     id: 39,
     category: "Python & Databases",
     question: "What does conn.cursor() return when working with databases in Python?",
@@ -429,14 +793,110 @@ const questions = [
     correct: 1,
   },
   {
-    id: 40,
-    category: "Storage & Backup",
-    question: "What does SLA stand for in the context of cloud databases?",
+    id: 72,
+    category: "Python & Databases",
+    question: "How do you create a connection to a SQLite database in Python?",
     options: [
-      "Structured Language Agreement",
-      "Service Level Agreement",
-      "Server Load Average",
-      "Standard License Authorization"
+      "sqlite3.open('mydb.db')",
+      "sqlite3.connect('mydb.db')",
+      "sqlite3.create('mydb.db')",
+      "sqlite3.database('mydb.db')"
+    ],
+    correct: 1,
+  },
+  {
+    id: 73,
+    category: "Python & Databases",
+    question: "What does cur.fetchall() do in Python?",
+    options: [
+      "Executes a SQL query",
+      "Returns all rows from the last executed query as a list",
+      "Closes the database connection",
+      "Commits all pending changes"
+    ],
+    correct: 1,
+  },
+  {
+    id: 74,
+    category: "Python & Databases",
+    question: "What is SQL injection?",
+    options: [
+      "A way to speed up SQL queries",
+      "A security vulnerability where malicious SQL is inserted through user input",
+      "A method for importing data into a database",
+      "A type of database backup"
+    ],
+    correct: 1,
+  },
+  {
+    id: 75,
+    category: "Python & Databases",
+    question: "What does 'CREATE TABLE IF NOT EXISTS' do?",
+    options: [
+      "Always creates a new table, replacing any existing one",
+      "Creates the table only if a table with that name does not already exist",
+      "Creates a temporary table that is deleted after the session",
+      "Checks if the database exists before creating the table"
+    ],
+    correct: 1,
+  },
+  {
+    id: 76,
+    category: "Python & Databases",
+    question: "What parameters are needed to connect to a MariaDB database in Python?",
+    options: [
+      "Only the database name",
+      "User, password, host, port, and database name",
+      "Only an IP address",
+      "A URL string only"
+    ],
+    correct: 1,
+  },
+  {
+    id: 77,
+    category: "Python & Databases",
+    question: "Why should you call conn.close() when done with a database connection?",
+    options: [
+      "To encrypt the database",
+      "To free up resources and properly close the connection",
+      "To save the query history",
+      "To create an automatic backup"
+    ],
+    correct: 1,
+  },
+  {
+    id: 78,
+    category: "Python & Databases",
+    question: "What does cur.execute() do in Python database programming?",
+    options: [
+      "Opens a new database connection",
+      "Runs a SQL statement on the database",
+      "Prints the query results to the screen",
+      "Creates a new database file"
+    ],
+    correct: 1,
+  },
+  {
+    id: 79,
+    category: "Python & Databases",
+    question: "What does lastrowid give you after an INSERT operation in MariaDB Connector/Python?",
+    options: [
+      "The total number of rows in the table",
+      "The auto-generated ID of the last inserted row",
+      "The last query that was executed",
+      "The name of the last table modified"
+    ],
+    correct: 1,
+  },
+  {
+    id: 80,
+    category: "Python & Databases",
+    question: "Why is the sqlite3 module convenient for Python developers?",
+    options: [
+      "It is the fastest database module available",
+      "It is built into Python and requires no additional installation",
+      "It can only be used on Windows",
+      "It supports all NoSQL databases"
     ],
     correct: 1,
   },
