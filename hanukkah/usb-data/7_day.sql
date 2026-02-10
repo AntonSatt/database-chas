@@ -34,7 +34,6 @@ AND	date LIKE '%2018-12-31 12:26%'
 --AND	name LIKE '%Carlos%'
 
 ORDER BY date
-LIMIT 1
 ;
 
 
