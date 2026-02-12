@@ -277,3 +277,164 @@
   margin: 0.15rem 0;
   font-size: 0.9rem;
 }
+
+/* ── Mode Tabs ── */
+.mode-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.mode-tab {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #3f3f46;
+  border-radius: 8px;
+  background: transparent;
+  color: #a1a1aa;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.mode-tab:hover {
+  border-color: #7c3aed;
+  color: #e4e4e7;
+}
+
+.mode-tab.active {
+  border-color: #7c3aed;
+  background: #2e1065;
+  color: #a78bfa;
+}
+
+/* ── Study View ── */
+.study {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.study-heading {
+  font-size: 1.3rem;
+  color: #e4e4e7;
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+/* ── Topic Cards ── */
+.topic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.topic-card {
+  border: 2px solid #3f3f46;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.topic-card:has(.topic-header.open) {
+  border-color: #7c3aed;
+}
+
+.topic-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: #27272a;
+  border: none;
+  color: #e4e4e7;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.topic-header:hover {
+  background: #2e1065;
+}
+
+.topic-header.open {
+  background: #2e1065;
+}
+
+.topic-title {
+  flex: 1;
+  text-align: left;
+}
+
+.topic-count {
+  color: #71717a;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.chevron {
+  font-size: 0.7rem;
+  color: #71717a;
+}
+
+/* ── Topic Body ── */
+.topic-body {
+  padding: 0.75rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* ── Section Cards ── */
+.section-card {
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.section-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+  background: #18181b;
+  border: none;
+  color: #a78bfa;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.section-header:hover {
+  background: #1e1e22;
+}
+
+.section-header.open {
+  background: #1e1e22;
+}
+
+/* ── Bullet Lists ── */
+.bullet-list {
+  padding: 0.5rem 1rem 0.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.bullet-list li {
+  color: #d4d4d8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  list-style: disc;
+}
+
+/* ── Test Yourself Button ── */
+.test-yourself-btn {
+  margin-top: 0.5rem;
+  align-self: center;
+}

@@ -17,9 +17,9 @@ const CATEGORIES = [
   ...Array.from(new Set(questions.map((q) => q.category))),
 ];
 
-export default function Quiz() {
-  const [category, setCategory] = useState("All");
-  const [started, setStarted] = useState(false);
+export default function Quiz({ initialCategory }) {
+  const [category, setCategory] = useState(initialCategory || "All");
+  const [started, setStarted] = useState(!!initialCategory);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState(null);
   const [showResult, setShowResult] = useState(false);
