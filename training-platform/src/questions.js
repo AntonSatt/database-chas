@@ -371,12 +371,12 @@ const questions = [
   {
     id: 81,
     category: "More SQL",
-    question: "In the Sakila database, which SQL concept would you use to find the most rented movie and its rental count?",
+    question: "Which combination of SQL clauses would you use to find which value appears most often in a column?",
     options: [
-      "A simple SELECT with a WHERE clause on the film table",
-      "JOIN combined with GROUP BY and ORDER BY with LIMIT",
-      "A TRIGGER that counts rentals automatically on insert",
-      "A VIEW that permanently stores the rental count per film"
+      "SELECT with WHERE and a nested subquery only",
+      "GROUP BY with COUNT(), ORDER BY DESC, and LIMIT 1",
+      "DISTINCT combined with HAVING and a TRIGGER",
+      "A VIEW that automatically tracks the most common value"
     ],
     correct: 1,
   },
